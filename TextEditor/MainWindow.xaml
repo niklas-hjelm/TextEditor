@@ -9,63 +9,12 @@
     Width="800"
     Height="450"
     mc:Ignorable="d">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <ToolBar x:Name="Tools">
-            <StackPanel Orientation="Horizontal">
-                <ToggleButton
-                    x:Name="BoldToggle"
-                    Width="30"
-                    Height="30"
-                    Checked="BoldToggle_Checked"
-                    Content="B"
-                    FontWeight="Bold"
-                    Unchecked="BoldToggle_Unchecked" />
-                <ToggleButton
-                    x:Name="ItalicToggle"
-                    Width="30"
-                    Height="30"
-                    Checked="ItalicToggle_Checked"
-                    Content="I"
-                    FontStyle="Italic"
-                    Unchecked="ItalicToggle_Unchecked" />
-                <ToggleButton
-                    x:Name="UnderlineToggle"
-                    Width="30"
-                    Height="30"
-                    Checked="UnderlineToggle_Checked"
-                    Unchecked="UnderlineToggle_Unchecked">
-                    <TextBlock Text="U" TextDecorations="Underline" />
-                </ToggleButton>
-            </StackPanel>
-            <Separator />
-            <Slider
-                x:Name="FontSizeSlider"
-                Width="40"
-                VerticalAlignment="Center"
-                Foreground="Black"
-                Interval="2"
-                LargeChange="6"
-                Maximum="36"
-                Minimum="8"
-                SmallChange="2"
-                ValueChanged="FontSizeSlider_ValueChanged" />
-            <Separator />
-            <ComboBox x:Name="FontFamilyBox" SelectionChanged="FontFamilyBox_SelectionChanged">
-                <ComboBoxItem FontFamily="Courier New" IsSelected="True">
-                    <TextBlock FontFamily="Courier New" Text="Consolas" />
-                </ComboBoxItem>
-                <ComboBoxItem FontFamily="Arial">
-                    <TextBlock FontFamily="Arial" Text="Arial" />
-                </ComboBoxItem>
-                <ComboBoxItem FontFamily="Constantia">
-                    <TextBlock FontFamily="Constantia" Text="Constantia" />
-                </ComboBoxItem>
-            </ComboBox>
-        </ToolBar>
-        <RichTextBox x:Name="TextField" Grid.Row="1" />
-    </Grid>
+    <TabControl>
+        <TabItem Header="Editor">
+            <local:Editor />
+        </TabItem>
+        <TabItem Header="Images">
+            <local:ImageView />
+        </TabItem>
+    </TabControl>
 </Window>
