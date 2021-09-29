@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UC\**" />
+    <EmbeddedResource Remove="UC\**" />
+    <None Remove="UC\**" />
+    <Page Remove="UC\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="images\dog.jpg" />
     <None Remove="images\kingfisher.jpg" />
     <None Remove="images\praying-mantis.jpg" />
